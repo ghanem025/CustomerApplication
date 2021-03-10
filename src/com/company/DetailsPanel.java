@@ -26,8 +26,8 @@ public class DetailsPanel extends JPanel implements DocumentListener {
     private JButton addbtn;
     private JButton find;
     private JPanel panel;
-    public Color kStartColor = new Color(135, 206, 235);
-    public Color kEndColor = new Color(135, 206, 235);
+    public Color kStartColor = new Color(135, 206, 245);
+    public Color kEndColor = new Color(220,220,220);
     public boolean kTransparentControls = true;
     public int kGradientFocus = 500;
     @SuppressWarnings("deprecation")
@@ -206,17 +206,21 @@ public class DetailsPanel extends JPanel implements DocumentListener {
 
     private void Layout(){
 
+        //position and render Namelabel
         nameLabel.setBounds(25, 25,80, 50);
-        System.out.println(nameLabel.getX());
         nameField.setBounds(nameLabel.getX()+100,nameLabel.getY()+15,200,25);
         add(nameLabel);
         add(nameField);
 
         phoneLabel.setBounds(400, 25,200, 50);
-        System.out.println(nameLabel.getX());
-        nameField.setBounds(nameLabel.getX()+100,nameLabel.getY()+15,200,25);
+        phoneField.setBounds(phoneLabel.getX()+190,phoneLabel.getY()+15,200,25);
         add(phoneLabel);
-        //add(nameField);
+        add(phoneField);
+
+        priceLabel.setBounds(25,100,200,50);
+        priceField.setBounds(priceLabel.getX()+200,priceLabel.getY()+15,200,25);
+        add(priceLabel);
+        add(priceField);
 
 
 /*
@@ -322,8 +326,6 @@ public class DetailsPanel extends JPanel implements DocumentListener {
             i++;
         }
     }
-
-
     @Override
     public void insertUpdate(DocumentEvent e) {
         // TODO Auto-generated method stub

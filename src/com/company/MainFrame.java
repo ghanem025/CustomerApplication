@@ -35,7 +35,7 @@ public class MainFrame extends JFrame {
         detailsPanel = new DetailsPanel();
         detailsPanel.addDetailListener(new DetailListener(){//ActionListener for details panel
             // once we click the add button we created, it will tell the computer to display the information we have inputed
-            public void detailEventoccured(DetailEvent event) {
+            public void detailEventoccured(DetailEvent event){
                 String text = event.getText(); // using the getText method i made in the DetailEvent class , the computer can get the information we inputed
                 textArea.setText(null);
                 textArea.append(text);//program displays the information we have inputed.
