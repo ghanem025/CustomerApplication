@@ -1,6 +1,7 @@
 package com.company;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseMotionListener;
 import java.io.IOException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -24,13 +25,26 @@ public class DetailsPanel extends JPanel implements DocumentListener {
     JTextArea textArea;
     private JButton addbtn;
     private JButton find;
+    private JPanel panel;
+    public Color kStartColor = new Color(135, 206, 235);
+    public Color kEndColor = new Color(135, 206, 235);
+    public boolean kTransparentControls = true;
+    public int kGradientFocus = 500;
     @SuppressWarnings("deprecation")
 
     public DetailsPanel(){
+        setPreferredSize(new Dimension(300,400));
         Dimension size = getPreferredSize();
-        size.width = 700; // size
+        size.width = 900; // size
+
         setPreferredSize(size);
         setBorder(BorderFactory.createTitledBorder("Details"));
+
+        if (kTransparentControls) {
+            setBg(true);
+        } else {
+            setBg(false);
+        }
         // if (nameField.getText().equals("") || phoneField.getText().equals("") || condField.getText().equals("") || priceField.getText().equals("")){
         //addbtn.setEnabled(false);
         // }
@@ -38,6 +52,9 @@ public class DetailsPanel extends JPanel implements DocumentListener {
         //     addbtn.setEnabled(true);
         //}
         // Contact event listener
+        setLayout(null);
+
+
         define();
         nameField.getDocument().addDocumentListener(this);
         phoneField.getDocument().addDocumentListener(this);
@@ -160,7 +177,7 @@ public class DetailsPanel extends JPanel implements DocumentListener {
     }
 
     public void define(){
-        String font = "<html><span style='font-size:30px'>";
+        String font = "<html><span style='font-size:20px'>";
         nameLabel = new JLabel(font +"Name:"); // different  labels to render on the details panel
         phoneLabel = new JLabel(font + "Phone Model:");
         priceLabel = new JLabel(font+ "Service Charge:");
@@ -188,17 +205,21 @@ public class DetailsPanel extends JPanel implements DocumentListener {
     }
 
     private void Layout(){
-        //GridBagLayout
-        setLayout(new GridBagLayout());// lets you add controls using the GridBagConstraints class
-        GridBagConstraints gc = new GridBagConstraints();// class where you can choose where you want each control to go
-        //column one
-        gc.anchor = GridBagConstraints.LINE_END;
-        gc.weightx = 0.5;
-        gc.weighty = 0.5; //space of cell
-//name
-        gc.gridx = 0;
-        gc.gridy = 0;
-        add(nameLabel,gc);
+
+        nameLabel.setBounds(25, 25,80, 50);
+        System.out.println(nameLabel.getX());
+        nameField.setBounds(nameLabel.getX()+100,nameLabel.getY()+15,200,25);
+        add(nameLabel);
+        add(nameField);
+
+        phoneLabel.setBounds(400, 25,200, 50);
+        System.out.println(nameLabel.getX());
+        nameField.setBounds(nameLabel.getX()+100,nameLabel.getY()+15,200,25);
+        add(phoneLabel);
+        //add(nameField);
+
+
+/*
 
 //phone
         gc.gridy = 1 ;
@@ -270,7 +291,7 @@ public class DetailsPanel extends JPanel implements DocumentListener {
         gc.gridx=1;
         gc.gridy = 5;
         add(textArea,gc);
-
+*/
     }
 
     public void commandDetailEvent(DetailEvent event) {
@@ -324,6 +345,40 @@ public class DetailsPanel extends JPanel implements DocumentListener {
         }
         else {
             addbtn.setEnabled(true);
+        }
+    }
+    @Override
+    public synchronized void addMouseMotionListener(MouseMotionListener l) {
+        super.addMouseMotionListener(l); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+        int w = getWidth();
+        int h = getHeight();
+
+        GradientPaint gp = new GradientPaint(0, 0, kStartColor, kGradientFocus, h, kEndColor);;
+
+        g2d.setPaint(gp);
+        g2d.fillRect(0, 0, w, h);
+        //g2d.dispose();
+    }
+
+    private void setBg(boolean isOpaque) {
+        Component[] components = this.getComponents();
+        for (Component component : components) {
+
+            ((JLabel) component).setOpaque(isOpaque);
+            ((JCheckBox) component).setOpaque(isOpaque);
+            ((JTextField) component).setOpaque(isOpaque);
+            ((JPasswordField) component).setOpaque(isOpaque);
+            ((JFormattedTextField) component).setOpaque(isOpaque);
+            ((JToolBar) component).setOpaque(isOpaque);
+            ((JRadioButton) component).setOpaque(isOpaque);
+
         }
     }
 }
