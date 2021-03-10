@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="KControls">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/KControls-master/dist/KControls.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
