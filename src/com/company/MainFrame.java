@@ -1,13 +1,12 @@
 package com.company;
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.*;
-import javax.swing.JTextArea;
-import javax.swing.JButton;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.text.*;
 
 
 public class MainFrame extends JFrame {
@@ -19,13 +18,12 @@ public class MainFrame extends JFrame {
 // layout manager
         setLayout(new BorderLayout());
 // Create Swing components
-        final JTextArea textArea = new JTextArea();
+        JTextArea textArea = new JTextArea();
         Font font = textArea.getFont();
         float size = font.getSize() + 12.0f;
         textArea.setFont( font.deriveFont(size) );
         textArea.setForeground(Color.BLUE);
-        textArea.setLineWrap(true);
-        textArea.setWrapStyleWord(true);
+        textArea.setHighlighter(null);
         button = new keeptoo.KButton(); // create the "add" button\
         button.setText("Display Customers");
         button.setFont(new java.awt.Font("Roboto", Font.PLAIN, 12));
@@ -37,6 +35,8 @@ public class MainFrame extends JFrame {
 
 
         detailsPanel = new DetailsPanel();
+        JPanel card = new JPanel(new CardLayout());
+        card.add(detailsPanel);
         detailsPanel.addDetailListener(new DetailListener(){//ActionListener for details panel
             // once we click the add button we created, it will tell the computer to display the information we have inputed
             public void detailEventoccured(DetailEvent event){
@@ -81,4 +81,5 @@ public class MainFrame extends JFrame {
         });
 
     }
+
 }
