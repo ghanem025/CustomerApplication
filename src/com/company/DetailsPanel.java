@@ -18,19 +18,16 @@ import java.io.FileReader;
 
 public class DetailsPanel extends JPanel implements DocumentListener {
     public static Hashtable <Integer,String> hash = new Hashtable<Integer,String>();
-    public static BufferedReader br;
     private EventListenerList listenerList = new EventListenerList();//created an object list for events
     private JTextField nameField , phoneField , priceField , findField;
     public JLabel nameLabel,phoneLabel,priceLabel,condLabel,findLabel,noteLabel ;
     JTextArea textArea,condField;
-    private JButton addbtn;
-    private JButton find;
-    private JPanel panel;
-    public Color kStartColor = new Color(135, 206, 245);
-    public Color kEndColor = new Color(220,220,220);
+    private keeptoo.KButton addbtn;
+    private keeptoo.KButton find;
+    public Color kStartColor = new Color(0,191,255);
+    public Color kEndColor = new Color(200,200,220);
     public boolean kTransparentControls = true;
     public int kGradientFocus = 500;
-    @SuppressWarnings("deprecation")
 
     public DetailsPanel(){
         setPreferredSize(new Dimension(300,500));
@@ -40,11 +37,7 @@ public class DetailsPanel extends JPanel implements DocumentListener {
         setPreferredSize(size);
         setBorder(BorderFactory.createTitledBorder("Details"));
 
-        if (kTransparentControls) {
-            setBg(true);
-        } else {
-            setBg(false);
-        }
+        setBg(kTransparentControls);
         // if (nameField.getText().equals("") || phoneField.getText().equals("") || condField.getText().equals("") || priceField.getText().equals("")){
         //addbtn.setEnabled(false);
         // }
@@ -72,7 +65,7 @@ public class DetailsPanel extends JPanel implements DocumentListener {
     }
     public void button(){
         addbtn = new keeptoo.KButton(); // create the "add" button\
-        addbtn.setFont(new java.awt.Font("Roboto", 0, 12));
+        addbtn.setFont(new java.awt.Font("Roboto", Font.PLAIN, 12));
         addbtn.setText("Add Customer");
         addbtn.setPreferredSize(new Dimension(100,40));
         addbtn.setForeground(Color.WHITE);
@@ -82,8 +75,12 @@ public class DetailsPanel extends JPanel implements DocumentListener {
         //addbtn.
     }
     private void search(){
-        find = new JButton("Find");
-        JButton addbtn2 = new JButton("Add"); // create the "add" button
+        find =  new keeptoo.KButton(); // create the "add" button\
+        find.setFont(new java.awt.Font("Roboto",Font.PLAIN, 12));
+        find.setText("Search");
+        find.setkForeGround(new java.awt.Color(75, 75, 75));
+        find.setkHoverForeGround(new Color(75,75,75));
+        //find.(new Color(25,25,25));
         find.setPreferredSize(new Dimension ( 100,40));
         find.addActionListener(new ActionListener(){ // ActionListener for the Search button i created
             @Override
@@ -131,7 +128,7 @@ public class DetailsPanel extends JPanel implements DocumentListener {
         addbtn.addActionListener(new ActionListener(){ // ActionListener for the "add" button i created
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (nameField.getText().equals(null) || nameField.getText().length() <= 2) {
+                if(nameField.getText().equals(null) || nameField.getText().length() <= 2) {
                     Windowerror();
                     System.out.println("ERROR");
                 } else {
@@ -180,7 +177,7 @@ public class DetailsPanel extends JPanel implements DocumentListener {
         phoneLabel = new JLabel(font + "Phone Model:");
         priceLabel = new JLabel(font+ "Service Charge:");
         condLabel = new JLabel(font + "Condition In:");
-        findLabel = new JLabel(font + "Search :");
+        findLabel = new JLabel(font + "Search:");
         noteLabel = new JLabel(font + "Note:");
 
         //text fields
@@ -226,8 +223,23 @@ public class DetailsPanel extends JPanel implements DocumentListener {
         add(condLabel);
         add(condField);
 
-        addbtn.setBounds(300,300,100,40);
+
+        noteLabel.setBounds(550,200,300,50);
+        textArea.setBounds(noteLabel.getX()+100,noteLabel.getY(),300,100);
+        add(noteLabel);
+        add(textArea);
+
+        addbtn.setBounds(300,400,100,40);
         add(addbtn);
+
+        findLabel.setBounds(900,0,200,100);
+        findField.setBounds(findLabel.getX()+125,findLabel.getY()+40,200,25);
+
+
+        add(findLabel);
+        add(findField);
+        find.setBounds(findLabel.getX()+125,findLabel.getY()+80,100,40);
+        add(find);
 
 
 /*
