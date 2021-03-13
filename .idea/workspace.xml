@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b086c3f7-96d3-49a4-8545-6236ff56a5bf" name="Default Changelist" comment="added new labels">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/resources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/customers.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/DetailsPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/DetailsPanel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/DetailsPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/DetailsPanel$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/DetailsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/DetailsPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/MainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/MainFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/MainFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/MainFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/MainFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/DetailsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DetailsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled104.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled104.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615601036589</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added new labels">
+      <created>1615604854506</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615604854506</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

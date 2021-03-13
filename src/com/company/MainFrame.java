@@ -1,20 +1,18 @@
 package com.company;
 import javax.swing.JFrame;
-import java.awt.BorderLayout;
+import java.awt.*;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
-import java.awt.Container;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Font;
-import java.awt.Color;
 
 
 public class MainFrame extends JFrame {
     private DetailsPanel detailsPanel; // detail panel object
+    private keeptoo.KButton button;
     boolean click = false;
     public MainFrame (String title){
         super(title);
@@ -28,7 +26,14 @@ public class MainFrame extends JFrame {
         textArea.setForeground(Color.BLUE);
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
-        JButton button = new JButton("Display Customers");
+        button = new keeptoo.KButton(); // create the "add" button\
+        button.setText("Display Customers");
+        button.setFont(new java.awt.Font("Roboto", Font.PLAIN, 12));
+        button.setkForeGround(new Color(75, 75, 75));
+        button.setkHoverForeGround(new Color(75,75,75));
+        button.setkHoverEndColor(new Color(0,0,0));
+        button.setkHoverColor(new Color(0,0,0));
+        button.setkHoverStartColor(new Color(0,191,255));
 
 
         detailsPanel = new DetailsPanel();

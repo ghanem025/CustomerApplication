@@ -67,11 +67,12 @@ public class DetailsPanel extends JPanel implements DocumentListener {
         addbtn = new keeptoo.KButton(); // create the "add" button\
         addbtn.setFont(new java.awt.Font("Roboto", Font.PLAIN, 12));
         addbtn.setText("Add Customer");
-        addbtn.setPreferredSize(new Dimension(100,40));
-        addbtn.setForeground(Color.WHITE);
-        addbtn.setBackground(Color.RED);
-        addbtn.setForeground(new java.awt.Color(23, 56, 100));
-        addbtn.setBackground(new java.awt.Color(134,123,43));
+        addbtn.setkForeGround(new Color(75, 75, 75));
+        addbtn.setkHoverForeGround(new Color(75,75,75));
+        addbtn.setkHoverEndColor(new Color(0,0,0));
+        addbtn.setkHoverColor(new Color(0,0,0));
+        addbtn.setkHoverStartColor(new Color(0,191,255));
+        addbtn.setPreferredSize(new Dimension ( 100,40));
         //addbtn.
     }
     private void search(){
@@ -80,6 +81,9 @@ public class DetailsPanel extends JPanel implements DocumentListener {
         find.setText("Search");
         find.setkForeGround(new java.awt.Color(75, 75, 75));
         find.setkHoverForeGround(new Color(75,75,75));
+        find.setkHoverEndColor(new Color(0,0,0));
+        find.setkHoverColor(new Color(0,0,0));
+        find.setkHoverStartColor(new Color(0,191,255));
         //find.(new Color(25,25,25));
         find.setPreferredSize(new Dimension ( 100,40));
         find.addActionListener(new ActionListener(){ // ActionListener for the Search button i created
