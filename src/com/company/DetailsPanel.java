@@ -20,9 +20,9 @@ public class DetailsPanel extends JPanel implements DocumentListener {
     public static Hashtable <Integer,String> hash = new Hashtable<Integer,String>();
     public static BufferedReader br;
     private EventListenerList listenerList = new EventListenerList();//created an object list for events
-    private JTextField nameField , phoneField , priceField ,condField , findField;
+    private JTextField nameField , phoneField , priceField , findField;
     public JLabel nameLabel,phoneLabel,priceLabel,condLabel,findLabel,noteLabel ;
-    JTextArea textArea;
+    JTextArea textArea,condField;
     private JButton addbtn;
     private JButton find;
     private JPanel panel;
@@ -33,7 +33,7 @@ public class DetailsPanel extends JPanel implements DocumentListener {
     @SuppressWarnings("deprecation")
 
     public DetailsPanel(){
-        setPreferredSize(new Dimension(300,400));
+        setPreferredSize(new Dimension(300,500));
         Dimension size = getPreferredSize();
         size.width = 900; // size
 
@@ -53,8 +53,6 @@ public class DetailsPanel extends JPanel implements DocumentListener {
         //}
         // Contact event listener
         setLayout(null);
-
-
         define();
         nameField.getDocument().addDocumentListener(this);
         phoneField.getDocument().addDocumentListener(this);
@@ -134,8 +132,8 @@ public class DetailsPanel extends JPanel implements DocumentListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (nameField.getText().equals(null) || nameField.getText().length() <= 2) {
-                    addbtn.setEnabled(false);
                     Windowerror();
+                    System.out.println("ERROR");
                 } else {
                     addbtn.setEnabled(true);
 
@@ -146,7 +144,7 @@ public class DetailsPanel extends JPanel implements DocumentListener {
                     String date = "";
                     final String note = textArea.getText();
                     try {
-                        FileWriter fstream = new FileWriter("logic.txt", true);
+                        FileWriter fstream = new FileWriter("customers.txt", true);
                         BufferedWriter out = new BufferedWriter(fstream);
                         date = new SimpleDateFormat("yyyy.MM.dd.HH.mm").format(new Date());
                         out.newLine();
@@ -189,11 +187,11 @@ public class DetailsPanel extends JPanel implements DocumentListener {
         nameField = new JTextField(15); // fields for the users to input there information
         phoneField = new JTextField(15);
         priceField = new JTextField(15);
-        condField = new JTextField(15);
+        condField = new JTextArea(8,30);
         findField = new JTextField(15);
 
         textArea = new JTextArea(8,30);
-        textArea.setFont(new Font("Serif", Font.CENTER_BASELINE, 16));
+        textArea.setFont(new Font("Serif", Font.ROMAN_BASELINE, 16));
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
     }
@@ -201,26 +199,35 @@ public class DetailsPanel extends JPanel implements DocumentListener {
     private void Windowerror(){
         JFrame frame = new JFrame("Name Error");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JOptionPane.showMessageDialog(frame,"Make sure you have entered a valid name","Name Error",JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(frame, "Make sure you have entered a valid name", "Name Error", JOptionPane.WARNING_MESSAGE);
+
     }
 
     private void Layout(){
 
         //position and render Namelabel
-        nameLabel.setBounds(25, 25,80, 50);
+        nameLabel.setBounds(25, 25,100, 50);
         nameField.setBounds(nameLabel.getX()+100,nameLabel.getY()+15,200,25);
         add(nameLabel);
         add(nameField);
 
-        phoneLabel.setBounds(400, 25,200, 50);
-        phoneField.setBounds(phoneLabel.getX()+190,phoneLabel.getY()+15,200,25);
+        phoneLabel.setBounds(400, 25,300, 50);
+        phoneField.setBounds(phoneLabel.getX()+210,phoneLabel.getY()+15,200,25);
         add(phoneLabel);
         add(phoneField);
 
-        priceLabel.setBounds(25,100,200,50);
-        priceField.setBounds(priceLabel.getX()+200,priceLabel.getY()+15,200,25);
+        priceLabel.setBounds(25,100,300,50);
+        priceField.setBounds(priceLabel.getX()+250,priceLabel.getY()+15,200,25);
         add(priceLabel);
         add(priceField);
+
+        condLabel.setBounds(25,200,300,50);
+        condField.setBounds(condLabel.getX()+200,condLabel.getY(),300,100);
+        add(condLabel);
+        add(condField);
+
+        addbtn.setBounds(300,300,100,40);
+        add(addbtn);
 
 
 /*
@@ -317,10 +324,9 @@ public class DetailsPanel extends JPanel implements DocumentListener {
 
     }
     public static void load()throws IOException{
-        BufferedReader br = new BufferedReader(new FileReader("logic.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("customers.txt"));
         String line = null;
         int i =0;
-
         while((line= br.readLine()) != null){
             hash.put(i,line);
             i++;
@@ -329,17 +335,17 @@ public class DetailsPanel extends JPanel implements DocumentListener {
     @Override
     public void insertUpdate(DocumentEvent e) {
         // TODO Auto-generated method stub
-        changed();
+       // changed();
     }
     @Override
     public void removeUpdate(DocumentEvent e) {
         // TODO Auto-generated method stub
-        changed();
+        //changed();
     }
     @Override
     public void changedUpdate(DocumentEvent e) {
         // TODO Auto-generated method stub
-        changed();
+        //changed();
     }
     public void changed() {
         if (phoneField.getText().equals("") || condField.getText().equals("")|| priceField.getText().equals("")|| nameField.getText().equals("")){

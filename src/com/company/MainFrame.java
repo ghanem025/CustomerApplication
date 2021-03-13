@@ -18,7 +18,6 @@ public class MainFrame extends JFrame {
     boolean click = false;
     public MainFrame (String title){
         super(title);
-
 // layout manager
         setLayout(new BorderLayout());
 // Create Swing components
@@ -29,8 +28,8 @@ public class MainFrame extends JFrame {
         textArea.setForeground(Color.BLUE);
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
-
         JButton button = new JButton("Display Customers");
+
 
         detailsPanel = new DetailsPanel();
         detailsPanel.addDetailListener(new DetailListener(){//ActionListener for details panel
@@ -44,10 +43,11 @@ public class MainFrame extends JFrame {
 
         // Add Swing components to content pane
         Container a = getContentPane();
-
-        a.add(textArea , BorderLayout.CENTER);
-        a.add(button , BorderLayout.SOUTH);
-        a.add(detailsPanel, BorderLayout.WEST);
+        textArea.setBounds(0,0,200,50);
+        a.add(textArea);
+        button.setBounds(0,0,50,50);
+        a.add(button , BorderLayout.EAST);
+        a.add(detailsPanel, BorderLayout.NORTH);
 
         //Contact listener
 
@@ -57,7 +57,7 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if(click == false){
                     try{
-                        BufferedReader br = new BufferedReader(new FileReader("logic.txt"));
+                        BufferedReader br = new BufferedReader(new FileReader("customers.txt"));
                         String line  = null;
                         while ((line = br.readLine())!= null) {
                             textArea.read(br, "File");//display the database
