@@ -2,9 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b086c3f7-96d3-49a4-8545-6236ff56a5bf" name="Default Changelist" comment="polished up the GUI">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KControls_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KControls_2_01.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/resources1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/src.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KControls-master/dist/KControls-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KControls-master/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KControls-master/src/main/java/com/k33ptoo/components/KButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KControls-master/src/main/java/com/k33ptoo/components/KGradientPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KControls-master/src/main/java/com/k33ptoo/utils/ComponentMoverUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KControls-master/src/main/java/com/k33ptoo/utils/ComponentResizerUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KControls-master/src/test/java/com/k33ptoo/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KControls-master/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/KControls-master/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KControls-master/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/KControls-master/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KControls-master/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/KControls-master/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/DetailEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/DetailListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/DetailsPanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/DetailsPanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/DetailsPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/MainFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/MainFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/MainFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/gui$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/gui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/newpanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled104.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled104.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,11 +41,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1pgFZW0OOgh0cWG3bvlqFZvkJlY" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -27,8 +57,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Keeptoo/KControls-master/src/keeptoo/resources" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/KControls-master" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17591868" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -95,8 +125,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added condition area and format has been changed" />
     <MESSAGE value="added new labels" />
     <MESSAGE value="polished up the GUI" />

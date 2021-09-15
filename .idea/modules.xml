@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/KControls-master/KControls-master.iml" filepath="$PROJECT_DIR$/KControls-master/KControls-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KControls-master/src/main/main.iml" filepath="$PROJECT_DIR$/KControls-master/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KControls-master/src/test/test.iml" filepath="$PROJECT_DIR$/KControls-master/src/test/test.iml" />
       <module fileurl="file://$PROJECT_DIR$/untitled104.iml" filepath="$PROJECT_DIR$/untitled104.iml" />
     </modules>
   </component>
 </project>
-
